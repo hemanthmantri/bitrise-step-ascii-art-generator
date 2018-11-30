@@ -9,7 +9,11 @@ import (
 )
 
 func main() {
-	addonURL := "https://bitrise-sample-addon.herokuapp.com/"
+	addonURL, ok := os.LookupEnv("BITRISE_SAMPLE_ADDON_URL")
+	if !ok {
+		fmt.Println("No addon URL is specified")
+		os.Exit(1)
+	}
 	req, err := http.NewRequest("GET", fmt.Sprintf("%s/ascii-art/%s", addonURL, os.Getenv("BITRISE_APP_SLUG")), nil)
 	if err != nil {
 		fmt.Printf("Failed to create HTTP request: %s", err)

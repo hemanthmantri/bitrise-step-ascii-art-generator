@@ -9,9 +9,6 @@ app:
   - BITRISE_STEP_ID: ascii-art-generator
   - BITRISE_STEP_VERSION: "0.0.1"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/slapec93/steps-ascii-art-generator.git
-  - MY_STEPLIB_REPO_FORK_GIT_URL: $MY_STEPLIB_REPO_FORK_GIT_URL
-  - BITRISE_APP_SLUG: asdf1234
-  - BITRISE_SAMPLE_ADDON_ACCESS_KEY: 3aaa280361d8c27e7de13776ce3483030dea91eb5b4d2b16366af04a636a73e6
 
 workflows:
   test:
