@@ -60,7 +60,7 @@ deps:
 
 toolkit:
   go:
-    package_name: github.com/slapec93/bitrise-step-ascii-art-generator
+    package_name: github.com/slapec93/steps-ascii-art-generator
 
 
 inputs:
@@ -77,10 +77,10 @@ inputs:
       value_options: []
 
 outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - BITRISE_ASCII_ART:
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      title: "Generated random Bitrise ASCII art"
+      summary: The Bitrise ASCII art fetched from the generator add-on
       description: |
         Description of this output.
 
