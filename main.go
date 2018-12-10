@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	addonURL, ok := os.LookupEnv("BITRISE_SAMPLE_ADDON_URL")
+	addonURL, ok := os.LookupEnv("addon_url")
 	if !ok {
 		fmt.Println("No addon URL is specified")
 		os.Exit(1)
@@ -19,7 +19,7 @@ func main() {
 		fmt.Printf("Failed to create HTTP request: %s", err)
 		os.Exit(1)
 	}
-	accessKey, ok := os.LookupEnv("BITRISE_SAMPLE_ADDON_ACCESS_KEY")
+	accessKey, ok := os.LookupEnv("access_token")
 	if !ok {
 		fmt.Println("Failed to look up environment variable")
 		os.Exit(1)
@@ -46,23 +46,11 @@ func main() {
 	}
 	asciiArt := string(bodyBytes)
 
-	//
-	// --- Step Outputs: Export Environment Variables for other Steps:
-	// You can export Environment Variables for other Steps with
-	//  envman, which is automatically installed by `bitrise setup`.
-	// A very simple example:
 	cmdLog, err := exec.Command("bitrise", "envman", "add", "--key", "BITRISE_ASCII_ART", "--value", asciiArt, "-n").CombinedOutput()
 	if err != nil {
 		fmt.Printf("Failed to expose output with envman, error: %#v | output: %s", err, cmdLog)
 		os.Exit(1)
 	}
-	// You can find more usage examples on envman's GitHub page
-	//  at: https://github.com/bitrise-io/envman
 
-	//
-	// --- Exit codes:
-	// The exit code of your Step is very important. If you return
-	//  with a 0 exit code `bitrise` will register your Step as "successful".
-	// Any non zero exit code will be registered as "failed" by `bitrise`.
 	os.Exit(0)
 }
