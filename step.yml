@@ -4,9 +4,9 @@ summary: |
   Add a random Bitrise ASCII art to your build log
 description: |
   Add a random Bitrise ASCII art to your build log
-website: https://github.com/slapec93/steps-ascii-art-generator
-source_code_url: https://github.com/slapec93/steps-ascii-art-generator
-support_url: https://github.com/slapec93/steps-ascii-art-generator/issues
+website: https://github.com/bitrise-steplib/bitrise-step-ascii-art-generator
+source_code_url: https://github.com/bitrise-steplib/bitrise-step-ascii-art-generator
+support_url: https://github.com/bitrise-steplib/bitrise-step-ascii-art-generator/issues
 host_os_tags:
   - osx-10.10
   - ubuntu-16.04
@@ -29,7 +29,7 @@ deps:
 
 toolkit:
   go:
-    package_name: github.com/slapec93/steps-ascii-art-generator
+    package_name: github.com/bitrise-steplib/bitrise-step-ascii-art-generator
 
 
 inputs:
