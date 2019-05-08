@@ -45,7 +45,7 @@ func main() {
 	defer func() {
 		err := resp.Body.Close()
 		if err != nil {
-			failf("Failed to close response body: %s", err)
+			log.Warnf("Failed to close response body: %s", err)
 		}
 	}()
 
