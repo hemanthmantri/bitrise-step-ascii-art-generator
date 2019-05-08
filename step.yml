@@ -32,7 +32,7 @@ inputs:
       is_expand: true
       is_required: true
       value_options: []
-  - access_token: $BITRISE_SAMPLE_ADDON_ACCESS_KEY
+  - access_token: $BITRISE_SAMPLE_ADDON_ACCESS_TOKEN
     opts:
       title: "Access token for the ASCII generator addon"
       summary: Access token for ASCII generator addon, which gets generated at the provisioning

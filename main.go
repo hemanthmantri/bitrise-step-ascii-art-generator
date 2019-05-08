@@ -44,7 +44,9 @@ func main() {
 
 	defer func() {
 		err := resp.Body.Close()
-		failf("Failed to close response body: %s", err)
+		if err != nil {
+			failf("Failed to close response body: %s", err)
+		}
 	}()
 
 	if resp.StatusCode != http.StatusOK {
